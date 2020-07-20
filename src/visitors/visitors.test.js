@@ -19,7 +19,6 @@ test('should fetch token', async () => {
 
 test('should fetch visitors', async () => {
   const mockData = {
-    total: 100,
     data: [
       { id: 1, name: 'Bill Murray', date: '2018-09-02T09:11:00' },
       { id: 2, name: 'John Doe', date: '2018-08-30T03:24:00' }
@@ -33,10 +32,10 @@ test('should fetch visitors', async () => {
   const result = await getVisitors(mockPageNo, mockToken);
   console.log(result);
 
-  return expect(result).toEqual(mockData);
+  return expect(result).toEqual(mockData.data);
 });
 
-test.only('should format results', () => {
+test('should format results', () => {
   const visitors = [
     { id: 1, name: 'Bill Murray', date: '2020-07-20T09:11:00' },
     { id: 1, name: 'Bill Murray', date: '2018-09-02T09:11:00' },

@@ -9,7 +9,6 @@ export const getToken = async () => {
     console.log(`getting login key`);
     const data = await axios.get(url);
     const key = data.data.token;
-    console.log(key);
 
     return await key;
   } catch (error) {
@@ -78,6 +77,7 @@ const start = async () => {
 
   const format = formatResults(visitors);
   console.log(format);
+  return format;
 };
 
 start();
